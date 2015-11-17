@@ -1,5 +1,7 @@
 class PinsController < ApplicationController
 
+	before_action :authenticate_user!
+
 
 ############################ Actions
 	def index
@@ -11,11 +13,11 @@ class PinsController < ApplicationController
 	end
 
 	def new
-		@pin = Pin.new
+		@pin = current_user.pins.build
 	end
 
 	def create
-		@pin = Pin.new(pin_params)
+		@pin = current_user.pins.build(pin_params)
 		if @pin.save
 			flash[:success] = "Successfully Saved"
 			redirect_to @pin
@@ -51,6 +53,10 @@ private
 
 	def get_pin
 		@pin= Pin.find(params[:id])
+	end
+
+	def get_user
+		@user = User.find(params[:user_id])
 	end
 
 
