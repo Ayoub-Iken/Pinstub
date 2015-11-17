@@ -1,4 +1,4 @@
-	<%= link_to 'New Pin', new_pin_path %>
+
 	<% @pin.each do |p| %>
 	<h3> <%= link_to p.title , p %><small> Submitted by <%= p.user.email%></small></h3>
 	<% end%>

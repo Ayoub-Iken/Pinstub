@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+  root "pins#index"
+  
   resources :pins
 
-  root "pins#index"
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

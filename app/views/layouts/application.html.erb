@@ -4,15 +4,27 @@
   <title>PinBoard</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,700|Open+Sans' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<% flash.each do |message_type, message| %>
-        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-      <% end %>
-
-<%= yield %>
-
+<div class="wrapper">
+	<%= render 'layouts/header' %>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<%= content_tag(:div, flash[:error], :class => "alert alert-danger alert-dismissable") if flash[:error] %>
+				<%= content_tag(:div, flash[:notice], :class => "alert alert-success alert-dismissable") if flash[:notice] %>
+				<%= content_tag(:div, flash[:alert], :class => "alert alert-warning alert-dismissable") if flash[:alert] %>
+				
+			</div>
+		</div>
+		<div class="row">
+			<%= yield %>
+			<div class="push"></div>
+		</div>
+	</div>
+</div>
+<%= render 'layouts/footer' %>
 </body>
 </html>
