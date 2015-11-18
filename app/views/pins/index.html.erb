@@ -1,5 +1,16 @@
-
+<div class="row">
 	<% @pin.each do |p| %>
-	<h3> <%= link_to p.title , p %><small> Submitted by <%= p.user.email%></small></h3>
-	<% end%>
+	<div class="col-md-4">
+		<div class="thumbnail">
+			<p><%= image_tag p.image.url(:medium), class: "center-block"%></p>
+			<div class="caption clearfix">
+				<h4 class="text-center imgtitle"> <%= p.title  %></h4>
+				<p> <%= truncate p.description, length: 60%></p>
+				<p><%= link_to 'View more', p, class: "btn btn-md btn-default pull-right" %></p>
+			</div>
+		</div>
+	</div>
+	<%end%>
+</div>
+
 

@@ -99,7 +99,7 @@ body{
 
 #logo {
 	text-shadow: 0px 1px 1px 0px rgba(0,0,102,0.1);
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Pacifico', cursive;
   font-size: 25px;
   color: #FF5335;
   text-decoration: none;
@@ -156,4 +156,31 @@ margin: 0 auto -4em;
 }
 footer, .push {
 height: 4em;
+}
+
+/************** Thumbnails index ***/
+
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 5px;
+
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.imgtitle{
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+  color: #3E92A3;
+}
+
+.caption p{
+  font-family: 'Josefin Slab', serif !important;
+  font-weight: 700;
 }
