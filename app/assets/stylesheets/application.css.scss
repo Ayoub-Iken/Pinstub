@@ -10,7 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- 
+ *= require 'masonry/transitions'
  */
  @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -183,4 +183,36 @@ height: 4em;
 .caption p{
   font-family: 'Josefin Slab', serif !important;
   font-weight: 700;
+}
+
+/*********************************** Show page *********************/
+
+#imgdescription{
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.editbutton, .editbutton:visited{
+  background-color: transparent;
+  border-color: cadetblue;
+  color: cadetblue;
+  margin-right: 5px;
+    &:hover{
+      background-color: cadetblue;
+      color: white !important;
+      border-color: cadetblue;
+    }
+}
+
+.deletebutton, .deletebutton:visited{
+  text-decoration: none;
+  background-color: transparent;
+  color: #FF5335;
+  border-color: #FF5335;
+    &:hover{
+      background-color: #FF5335;
+      color: white !important ;
+      border-color: #FF5335;
+    }
 }

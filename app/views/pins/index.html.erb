@@ -1,8 +1,8 @@
-<div class="row">
+<div class="row transitions-enabled" id="pins">
 	<% @pin.each do |p| %>
-	<div class="col-md-4">
+	<div class="col-md-4 col-sm-6 col-xs-8">
 		<div class="thumbnail">
-			<p><%= image_tag p.image.url(:medium), class: "center-block"%></p>
+			<p class="box"><%= image_tag p.image.url(:medium), class: "center-block"%></p>
 			<div class="caption clearfix">
 				<h4 class="text-center imgtitle"> <%= p.title  %></h4>
 				<p> <%= truncate p.description, length: 60%></p>

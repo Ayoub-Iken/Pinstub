@@ -1,7 +1,24 @@
-<h1> <%= @pin.title%></h1>
-<p><%= image_tag @pin.image.url(:medium)%></p>
-<p><%= @pin.description%></p>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="thumbnail">
+			<p class="box"><%= image_tag @pin.image.url, class: "center-block"%></p>
+			<div class="caption clearfix">
+				<h4 class="text-center imgtitle"> <%= @pin.title  %></h4>
+				<p id="imgdescription"> <%= @pin.description%></p>
+				<!-- <div class="row"> -->
+					<div class="pull-right">
+					<% if current_user == @pin.user %>
 
-<%= link_to 'Home', root_path %>
-<%= link_to 'Edit', edit_pin_path, class: "btn btn-sm btn-default" %>
-<%= link_to 'Delete', pin_path, method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-sm btn-danger" %>
+						<%= link_to 'Edit', edit_pin_path, class: "btn btn-md editbutton" %>
+						<%= link_to 'Delete', pin_path, method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-md deletebutton" %>
+					<% else %>
+					
+					<% end %>
+					</div>
+				<!-- </div> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+
