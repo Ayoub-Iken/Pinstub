@@ -47,6 +47,12 @@ class PinsController < ApplicationController
 		flash[:success] = "Pin Deleted Successfully"
 	end
 
+	def upvote
+		get_pin
+		@pin.upvote_by current_user
+		redirect_to :back
+	end
+
 ####################### METHODES
 
 private

@@ -5,17 +5,27 @@
 			<div class="caption clearfix">
 				<h4 class="text-center imgtitle"> <%= @pin.title  %></h4>
 				<p id="imgdescription"> <%= @pin.description%></p>
-				<!-- <div class="row"> -->
-					<div class="pull-right">
+				<div class="row container-fluid">
+					<!-- <div class="pull-right"> -->
 					<% if current_user == @pin.user %>
-
-						<%= link_to 'Edit', edit_pin_path, class: "btn btn-md editbutton" %>
-						<%= link_to 'Delete', pin_path, method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-md deletebutton" %>
+						<div class="pull-left">
+							<%= link_to like_pin_path(@pin), method: :put, class: " btn btn-md likebutton disabled" do %>
+								<span class="glyphicon glyphicon-heart heart">  <%=  @pin.get_upvotes.size%> </span>
+							<% end %>
+						</div>	
+						<div class="pull-right">
+							<%= link_to 'Edit', edit_pin_path, class: "btn btn-md editbutton" %>
+							<%= link_to 'Delete', pin_path, method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-md deletebutton" %>
+						</div>
 					<% else %>
-					
+						<div class="pull-right">
+							<%= link_to like_pin_path(@pin), method: :put, class: " btn btn-md likebutton" do %>
+								<span class="glyphicon glyphicon-heart heart">  <%=  @pin.get_upvotes.size%> </span>
+							<% end %>
+						</div>
 					<% end %>
-					</div>
-				<!-- </div> -->
+					<!-- </div> -->
+				</div>
 			</div>
 		</div>
 	</div>

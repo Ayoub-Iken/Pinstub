@@ -216,3 +216,18 @@ height: 4em;
       border-color: #FF5335;
     }
 }
+
+.likebutton{
+  border: 1px solid transparent !important;
+  color: #af111c ;
+  border-color: #af111c;
+    &:hover{
+      color : #af111c ;
+      border: 1px solid #af111c !important;
+    }
+}
+
+.liked{
+  border: 1px solid #af111c !important;;
+}
+
